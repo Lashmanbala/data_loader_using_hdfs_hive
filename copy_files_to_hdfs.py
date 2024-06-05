@@ -3,13 +3,13 @@ import glob
 import os
 
 subprocess.check_call(
-    'hdfs dfs -mkdir -p /user/`whoami`/data',
+    'hdfs dfs -mkdir -p /user/`whoami`/nyse_data',
     shell=True
 )
 
 path='data'
 
-cmd_template = 'hdfs dfs -put {src_dir} /user/`whoami`/data/{tgt_dir}'
+cmd_template = 'hdfs dfs -put {src_dir} /user/`whoami`/nyse_data/{tgt_dir}'
 
 for item in glob.glob(f'{path}/*'):
     try:
