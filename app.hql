@@ -21,4 +21,7 @@ CREATE TABLE IF NOT EXISTS nyse_daily(
     closeprice FLOAT,
     volume BIGINT
 ) PARTITIONED BY (trade_month int)
-STORED AS parquet
+STORED AS parquet;
+
+LOAD DATA INPATH '/user/`whoami`/nyse_data'
+OVERWRITE INTO TABLE nyse_stage;
