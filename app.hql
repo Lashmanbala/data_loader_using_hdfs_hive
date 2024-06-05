@@ -25,3 +25,5 @@ STORED AS parquet;
 
 LOAD DATA INPATH '/user/`whoami`/nyse_data'
 OVERWRITE INTO TABLE nyse_stage;
+
+SET hive.exec.dynamic.partition.mode = nonstrict;
