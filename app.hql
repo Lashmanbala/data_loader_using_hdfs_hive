@@ -23,10 +23,12 @@ CREATE TABLE IF NOT EXISTS nyse_parquet(
 ) PARTITIONED BY (trade_month int)
 STORED AS parquet;
 
-LOAD DATA INPATH '/user/${user_name}/nyse_data/'
+LOAD DATA INPATH '/user/${user_name}/nyse_data/NYSE_1997'
 OVERWRITE INTO TABLE nyse_stage;
 
 SET hive.exec.dynamic.partition.mode = nonstrict;
 
 INSERT OVERWRITE TABLE nyse_parquet PARTITION (trade_month)
 SELECT ns.*, SUBSTR(trade_date, 1, 6) AS trade_month FROM nyse_stage AS ns;
+
+SHOW PARTITIONS nyse_parquet;
