@@ -23,7 +23,7 @@ CREATE TABLE IF NOT EXISTS nyse_parquet(
 ) PARTITIONED BY (trade_month int)
 STORED AS parquet;
 
-LOAD DATA INPATH '/user/${user_name}/nyse_data/NYSE_1997'
+LOAD DATA INPATH '/user/${user_name}/nyse_data/'
 OVERWRITE INTO TABLE nyse_stage;
 
 SET hive.exec.dynamic.partition.mode = nonstrict;
