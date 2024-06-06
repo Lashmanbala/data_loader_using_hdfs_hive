@@ -1,0 +1,1 @@
+hive -f app.hql --verbose --hivevar user_name=`whoami`
