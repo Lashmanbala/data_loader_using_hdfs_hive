@@ -28,4 +28,5 @@ OVERWRITE INTO TABLE nyse_stage;
 
 SET hive.exec.dynamic.partition.mode = nonstrict;
 
-
+INSERT OVERWRITE TABLE nyse_parquet PARTITION (trade_month)
+SELECT ns.*, SUBSTR(trade_date, 1, 6) AS trade_month FROM nyse_stage AS ns;
