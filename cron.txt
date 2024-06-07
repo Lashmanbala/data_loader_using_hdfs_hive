@@ -1,0 +1,1 @@
+* * * * * /home/hadoop/data_loader_using_hdfs_hive/wrapper.sh
