@@ -1,0 +1,207 @@
+CREATE DATABASE IF NOT EXISTS nyse_db
+
+
+USE nyse_db
+
+
+CREATE TABLE IF NOT EXISTS nyse_stage(
+    ticker VARCHAR(255),
+    trade_date INT,
+    openprice FLOAT,
+    highprice FLOAT,
+    lowprice FLOAT,
+    closeprice FLOAT,
+    volume BIGINT
+) ROW FORMAT DELIMITED FIELDS TERMINATED BY ',' 
+
+
+CREATE TABLE IF NOT EXISTS nyse_parquet(
+    ticker VARCHAR(255),
+    trade_date INT,
+    openprice FLOAT,
+    highprice FLOAT,
+    lowprice FLOAT,
+    closeprice FLOAT,
+    volume BIGINT
+) PARTITIONED BY (trade_month int)
+STORED AS parquet
+
+
+LOAD DATA INPATH '/user/${user_name}/nyse_data/'
+OVERWRITE INTO TABLE nyse_stage
+SET hive.exec.dynamic.partition.mode = nonstrict
+
+
+INSERT OVERWRITE TABLE nyse_parquet PARTITION (trade_month)
+SELECT ns.*, SUBSTR(trade_date, 1, 6) AS trade_month FROM nyse_stage AS ns
+
+
+SHOW PARTITIONS nyse_parquet
+trade_month=199701
+trade_month=199702
+trade_month=199703
+trade_month=199704
+trade_month=199705
+trade_month=199706
+trade_month=199707
+trade_month=199708
+trade_month=199709
+trade_month=199710
+trade_month=199711
+trade_month=199712
+CREATE DATABASE IF NOT EXISTS nyse_db
+
+
+USE nyse_db
+
+
+CREATE TABLE IF NOT EXISTS nyse_stage(
+    ticker VARCHAR(255),
+    trade_date INT,
+    openprice FLOAT,
+    highprice FLOAT,
+    lowprice FLOAT,
+    closeprice FLOAT,
+    volume BIGINT
+) ROW FORMAT DELIMITED FIELDS TERMINATED BY ',' 
+
+
+CREATE TABLE IF NOT EXISTS nyse_parquet(
+    ticker VARCHAR(255),
+    trade_date INT,
+    openprice FLOAT,
+    highprice FLOAT,
+    lowprice FLOAT,
+    closeprice FLOAT,
+    volume BIGINT
+) PARTITIONED BY (trade_month int)
+STORED AS parquet
+
+
+LOAD DATA INPATH '/user/${user_name}/nyse_data/'
+OVERWRITE INTO TABLE nyse_stage
+SET hive.exec.dynamic.partition.mode = nonstrict
+
+
+INSERT OVERWRITE TABLE nyse_parquet PARTITION (trade_month)
+SELECT ns.*, SUBSTR(trade_date, 1, 6) AS trade_month FROM nyse_stage AS ns
+CREATE DATABASE IF NOT EXISTS nyse_db
+
+
+SHOW PARTITIONS nyse_parquet
+trade_month=199701
+trade_month=199702
+trade_month=199703
+trade_month=199704
+trade_month=199705
+trade_month=199706
+trade_month=199707
+trade_month=199708
+trade_month=199709
+trade_month=199710
+trade_month=199711
+trade_month=199712
+trade_month=199801
+trade_month=199802
+trade_month=199803
+trade_month=199804
+trade_month=199805
+trade_month=199806
+trade_month=199807
+trade_month=199808
+trade_month=199809
+trade_month=199810
+trade_month=199811
+trade_month=199812
+
+
+USE nyse_db
+
+
+CREATE TABLE IF NOT EXISTS nyse_stage(
+    ticker VARCHAR(255),
+    trade_date INT,
+    openprice FLOAT,
+    highprice FLOAT,
+    lowprice FLOAT,
+    closeprice FLOAT,
+    volume BIGINT
+) ROW FORMAT DELIMITED FIELDS TERMINATED BY ',' 
+
+
+CREATE TABLE IF NOT EXISTS nyse_parquet(
+    ticker VARCHAR(255),
+    trade_date INT,
+    openprice FLOAT,
+    highprice FLOAT,
+    lowprice FLOAT,
+    closeprice FLOAT,
+    volume BIGINT
+) PARTITIONED BY (trade_month int)
+STORED AS parquet
+
+
+LOAD DATA INPATH '/user/${user_name}/nyse_data/'
+OVERWRITE INTO TABLE nyse_stage
+CREATE DATABASE IF NOT EXISTS nyse_db
+
+
+USE nyse_db
+
+
+CREATE TABLE IF NOT EXISTS nyse_stage(
+    ticker VARCHAR(255),
+    trade_date INT,
+    openprice FLOAT,
+    highprice FLOAT,
+    lowprice FLOAT,
+    closeprice FLOAT,
+    volume BIGINT
+) ROW FORMAT DELIMITED FIELDS TERMINATED BY ',' 
+
+
+CREATE TABLE IF NOT EXISTS nyse_parquet(
+    ticker VARCHAR(255),
+    trade_date INT,
+    openprice FLOAT,
+    highprice FLOAT,
+    lowprice FLOAT,
+    closeprice FLOAT,
+    volume BIGINT
+) PARTITIONED BY (trade_month int)
+STORED AS parquet
+
+
+LOAD DATA INPATH '/user/${user_name}/nyse_data/'
+OVERWRITE INTO TABLE nyse_stage
+CREATE DATABASE IF NOT EXISTS nyse_db
+
+
+USE nyse_db
+
+
+CREATE TABLE IF NOT EXISTS nyse_stage(
+    ticker VARCHAR(255),
+    trade_date INT,
+    openprice FLOAT,
+    highprice FLOAT,
+    lowprice FLOAT,
+    closeprice FLOAT,
+    volume BIGINT
+) ROW FORMAT DELIMITED FIELDS TERMINATED BY ',' 
+
+
+CREATE TABLE IF NOT EXISTS nyse_parquet(
+    ticker VARCHAR(255),
+    trade_date INT,
+    openprice FLOAT,
+    highprice FLOAT,
+    lowprice FLOAT,
+    closeprice FLOAT,
+    volume BIGINT
+) PARTITIONED BY (trade_month int)
+STORED AS parquet
+
+
+LOAD DATA INPATH '/user/${user_name}/nyse_data/'
+OVERWRITE INTO TABLE nyse_stage
