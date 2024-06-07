@@ -1,1 +1,1 @@
-hive -f /home/hadoop/data_loader_using_hdfs_hive/app.hql --verbose --hivevar user_name=`whoami`
+hive -f /home/hadoop/data_loader_using_hdfs_hive/app.hql --verbose --hivevar user_name=`whoami` >> /var/log/hive/user/hadoop/hive.log
