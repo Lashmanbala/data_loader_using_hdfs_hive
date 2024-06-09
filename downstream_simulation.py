@@ -24,7 +24,7 @@ def downstream_simulator():
             print(f'copying {os.path.split(item)[1]} to hdfs')
             subprocess.check_call(hdfs_cmd, shell=True)
 
-            time.sleep(120)   # delaying the process of next file by 2 minutes for simulation
+            time.sleep(180)   # delaying the process of next file by 3 minutes for simulation
             
         except subprocess.CalledProcessError as e:
             print(f'failed to unzip {item} : {e}')
