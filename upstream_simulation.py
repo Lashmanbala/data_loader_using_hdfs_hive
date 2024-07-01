@@ -4,7 +4,7 @@ import os
 import time
 
 
-def downstream_simulator():
+def upstream_simulator():
     hdfs_cmd_template = 'hdfs dfs -put {src_dir} /user/`whoami`/nyse_data/{tgt_dir}'
 
     for item in glob.glob('data/*'):
