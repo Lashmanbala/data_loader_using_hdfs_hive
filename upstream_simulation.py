@@ -30,4 +30,4 @@ def upstream_simulator():
             print(f'failed to unzip {item} : {e}')
 
 if __name__ == "__main__":
-    downstream_simulator()
+    upstream_simulator()
