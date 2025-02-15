@@ -1,4 +1,4 @@
-# Data Loader using HDFS and Hive
+# NYSE data ETL using Hive
 
 ## Overview
 
