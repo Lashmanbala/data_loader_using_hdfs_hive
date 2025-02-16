@@ -2,7 +2,13 @@
 
 ## Overview
 
-This repository contains scripts and tools for efficiently loading data into Hadoop Distributed File System (HDFS) and Hive, tailored for use with AWS EMR 7.0.0, Hadoop 3.3.6, and Hive 3.1.3. It automates the data integration process, streamlining the workflow for managing large-scale data pipelines. The repository includes sample data, Hive query scripts, shell scripts for task scheduling, and a Python script to simulate upstream data processes, all designed to facilitate robust and scalable data management in a cloud environment.
+The requirement is to process the provided financial data in hive and store it as partitioned parquet files.
+The data is NYSE financial data in csv format in zip files.
+The data is periodically put into HDFS as a csv file.
+A python script is developed to simulate the incoming data into hdfs.
+A Hive script is developed to load the csv data into a staging table. And I read the data from the staging table and write into the parquet table with partitions.
+I have developed a shell script to execute the hive script and capture the logs.
+Using cron job the shell script is triggered in a regular interval.
 
 ## Contents
 
